@@ -24,7 +24,9 @@ class _signUpScreen extends State<signUpScreen> {
       Response respone = await post(
         Uri.parse(URL),
         body:{
-          ''
+          'email':Email,
+          'password':Password,
+          'username':UserName,
         };
         
         if(respone.statusCode == 200){
