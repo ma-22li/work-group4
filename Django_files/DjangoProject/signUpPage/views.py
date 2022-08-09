@@ -11,8 +11,8 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
-            password = form.cleaand_data.get('password')
-            termsOfUse = form.cleaand_data.get('termsOfUse')
+            password = form.cleaned_data.get('password')
+            termsOfUse = form.cleaned_data.get('termsOfUse')
 
             user = authenticate(username=username,email=email,password=password,termsOfUse=termsOfUse)
 
