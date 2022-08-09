@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    name= models.CharField(max_length=100)
-    email= models.EmailField()
-    password= models.CharField()
+    username= models.CharField(max_length=50)
+    email= models.EmailField(max_length= 254, help_text='example@email.com')
+    password= models.CharField(max_length= 50)
+    termsOfUse= models.BooleanField()

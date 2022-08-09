@@ -6,15 +6,13 @@
 
 
     {% csrf_token %}
-    {% for filed in form %}
-    <p>
-        {{ filed.lable_tag }} <br>
-        {{ filed }}
-        {% for error in filed.errors %}
-    <p style="color:red">{{ error }}</p>
-    {% endfor %}
-    </p>
-    {% endfor %}
+    <br>
+    <br>
+    {{form.as_p}}
+
+    <br>
+    <br>
+
 
     <button type="submit"> sign up </button>
 </form>

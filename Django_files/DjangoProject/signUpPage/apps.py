@@ -1,5 +1,5 @@
-from django.apps import AppConfig
+# from django.apps import AppConfig
 
 
-class SignupConfig(AppConfig):
-    name = 'signUp'
+# class SignupConfig(AppConfig):
+#     name = 'signup'
