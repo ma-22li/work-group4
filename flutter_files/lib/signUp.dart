@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workgroup4_flutter/signUpPost.dart';
-import 'dart:async';
+import 'package:workgroup4_flutter/Screens/Google.dart';
+import 'package:workgroup4_flutter/Screens/Next.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _passConroller = TextEditingController();
   TextEditingController _emailConroller = TextEditingController();
+  MaterialColor feedback = Colors.red;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 validText,
                 style: TextStyle(
                   fontSize: 15,
-                  color: Colors.red,
+                  color: feedback,
                 ),
               ),
               SizedBox(
@@ -93,7 +95,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 value: chek,
                 onChanged: (val) {
                   setState(() {
-                    chek = val;
+                    chek = val!;
                   });
                 },
               ),
@@ -107,17 +109,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       setState(() {
                         validText =
                             "    You should agree on terms and conditions";
+                        feedback = Colors.red;
                       });
                     } else if (validCheck(_nameController.text,
                                 _emailConroller.text, _passConroller.text)
                             .ValidInput() ==
                         "success") {
-                      setState(() {
-                        SignUpPost().signUpPost(
-                          _nameController.text,
-                          _emailConroller.text,
-                          _passConroller.text,
-                        );
+                      SignUpPost postObject = new SignUpPost(
+                        _nameController.text,
+                        _emailConroller.text,
+                        _passConroller.text,
+                      );
+                      postObject.signUpPost().then((result) {
+                        if (validCheck(_nameController.text,
+                                _emailConroller.text, _passConroller.text)
+                            .failSuccess(result!)) {
+                          setState(() {
+                            validText = "    " + "Success!";
+                            feedback = Colors.green;
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const NextScreen()),
+                            );
+                          });
+                        } else {
+                          setState(() {
+                            validText = "    " + "Error: $result";
+                            feedback = Colors.red;
+                          });
+                        }
                       });
                     } else {
                       setState(() {
@@ -125,6 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             validCheck(_nameController.text,
                                     _emailConroller.text, _passConroller.text)
                                 .ValidInput();
+                        feedback = Colors.red;
                       });
                     }
                   },
@@ -152,7 +174,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     width: 135,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoogleScreen().getLunch();
+                      },
                       child: Text(
                         'Google',
                       ),
@@ -163,7 +187,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     width: 135,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoogleScreen().closeLunch();
+                      },
                       child: Text(
                         'Twitter',
                       ),
@@ -184,11 +210,6 @@ class validCheck {
 
   validCheck(this.UserName, this.Email, this.Password);
 
-  bool isNumeric(String str) {
-    bool found = str.contains(new RegExp(r'[0-9]'));
-    return found;
-  }
-
   String ValidInput() {
     if (UserName.isEmpty) {
       return "User Name is empty you should fill it";
@@ -199,9 +220,6 @@ class validCheck {
     if (Email.isEmpty) {
       return "Email is empty you should fill it";
     }
-    if (isNumeric(UserName)) {
-      return "User Name must not contain any number!";
-    }
     bool emailValid = RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(Email);
@@ -209,5 +227,13 @@ class validCheck {
       return "Email form is not correct!";
     }
     return "success";
+  }
+
+  bool failSuccess(String messege) {
+    if (messege == "{\"username\":\"$UserName\",\"email\":\"$Email\"}") {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
