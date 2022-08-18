@@ -5,6 +5,6 @@ from django.db import models
 class Round(models.Model):
     title = models.TextField(max_length=400)
     mosque = models.TextField(max_length=200)
-    type = models.TextChoices()
+    type = models.TextChoices('online', 'Physically')
     date = models.DateTimeField()
-    category=models.TextChoices()
+    category=models.TextChoices('Older', 'Younger')
