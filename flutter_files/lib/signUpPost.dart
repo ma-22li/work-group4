@@ -4,7 +4,7 @@ import 'dart:async';
 
 class SignUpPost {
   String urL = "http://localhost:8000/register";
-  String resp;
+  late String resp;
 
   var _myHeader = {
     'Content-type': 'application/json',

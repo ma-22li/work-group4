@@ -4,7 +4,7 @@ import 'dart:async';
 
 class CreateCircPost {
   String urL = "http://127.0.0.1:8000/createCircute";
-  String? resp;
+  late String resp;
 
   var _myHeader = {
     'Content-type': 'application/json',
@@ -19,7 +19,7 @@ class CreateCircPost {
 
 //String userName, String email, String password
 
-  Future<String?> createPost() async {
+  Future<String> createPost() async {
     Uri url = Uri.parse(urL);
 
     var _myBody = {
@@ -40,6 +40,6 @@ class CreateCircPost {
   }
 
   String getResp() {
-    return resp!;
+    return resp;
   }
 }

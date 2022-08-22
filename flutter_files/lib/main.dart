@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:workgroup4_flutter/Screens/signUp.dart';
+
+import 'Screens/Homepage.dart';
+import 'Screens/newCourse.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +18,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Home',
-      home: SignUpScreen(),
+      home: NewCourse(),
     );
   }
 }
