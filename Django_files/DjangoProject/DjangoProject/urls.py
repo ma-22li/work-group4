@@ -7,4 +7,5 @@ urlpatterns = [
   path('',include('api.urls')),
   path('api-token-auth', views.obtain_auth_token),
   path('',include('signUpPage.urls')),
+  path('',include('classes.urls')),
 ]
