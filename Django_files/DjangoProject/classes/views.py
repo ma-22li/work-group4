@@ -10,10 +10,16 @@ def classes(request):
 
         if form.is_valid():
             form.save()
-            all_items = Round.objects.all
+            
+            title = form.cleaned_data.get('title')
+            mosque = form.cleaned_data.get('mosque')
+            type = form.cleaned_data.get('type')
+            date = form.cleaned_data.get('date')
+            category=form.cleaned_data.get('category')
+            
             messages.SUCCESS(request,('Has been added To Classes'))
-            return render (request,'home.html',{'all_items':all_items})
+            return render (request,'base.html',{'form':form})
 
     else:
-        all_items = Round.objects.all
-        return render (request,'home.html',{'all_items':all_items})
+       form = RoundForm()
+       return render (request,'classes.html',{'form':form})

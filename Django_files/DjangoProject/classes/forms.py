@@ -1,9 +1,12 @@
-from dataclasses import field
-from pyexpat import model
 from django import forms 
 from .models import Round
 
 class RoundForm (forms.ModelForm):
+    title = forms.TextInput()
+    mosque = forms.TextInput()
+    type = forms.TextInput()
+    date = forms.DateTimeField()
+    category=forms.TextInput()
     class Meta:
         model = Round
-        field=["title","mosque","type","date","category"]
+        fields=["title","mosque","type","date","category"]

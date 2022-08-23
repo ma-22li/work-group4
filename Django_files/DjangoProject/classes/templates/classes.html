@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>classes </h2>
+<form method="post">
+
+    {% csrf_token %}
+
+    <br>
+    <br>
+    {{form.as_p}}
+
+    <br>
+    <br>
+
+
+    <button type="submit"> ADD </button>
+</form>
+
+
+{% endblock %}
