@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f08bc98-b55e-4637-863a-684b2da50e34" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Django_files/DjangoProject/DjangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Django_files/DjangoProject/DjangoProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Django_files/DjangoProject/login/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Django_files/DjangoProject/login/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Django_files/DjangoProject/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Django_files/DjangoProject/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Django_files/DjangoProject/signUpPage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Django_files/DjangoProject/signUpPage/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Django_files/DjangoProject/signUpPage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Django_files/DjangoProject/signUpPage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/flutter_files_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/flutter_files_android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/login.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

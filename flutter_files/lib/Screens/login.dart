@@ -84,17 +84,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         " Error";
                         feedback = Colors.red;
                       });
-                    } else if (validCheck(_nameController.text,
+                    } else if (validCheck(
                         _emailConroller.text, _passConroller.text)
                         .ValidInput() ==
                         "success") {
                       LoginPost postObject = new LoginPost(
 
                       );
-                      postObject.loginPost( _nameController.text,
+                      postObject.loginPost(
                         _emailConroller.text,
                         _passConroller.text,).then((result) {
-                        if (validCheck(_nameController.text,
+                        if (validCheck(
                             _emailConroller.text, _passConroller.text)
                             .failSuccess('result')) {
                           setState(() {
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     } else {
                       setState(() {
                         validText = "    " +
-                            validCheck(_nameController.text,
+                            validCheck(
                                 _emailConroller.text, _passConroller.text)
                                 .ValidInput();
                         feedback = Colors.red;
