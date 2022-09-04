@@ -6,7 +6,7 @@ from login.forms import LoginForm
 # Create your views here.
 def login(request):
     if request.method=='POST':
-        form = LoginForm(request.POST)
+        form = LoginForm(request.POST or None)
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email')
